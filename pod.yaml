@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: xiowang-d2l
+  annotations:
+    k8s.aliyun.com/eci-image-cache: "true"
+    k8s.aliyun.com/eci-use-specs: "ecs.gn6i-c4g1.xlarge,ecs.gn6i-c8g1.2xlarge"
+spec:
+  containers:
+  - name: main
+    image: henrywangx/d2l:v1.0
+    command: ["conda", "run", "--no-capture-output", "-n", "d2l", "jupyter", "lab", "--notebook-dir=/d2l/d2l-zh/pytorch", "--allow-root"]
+    imagePullPolicy: Always
+  restartPolicy: Always
