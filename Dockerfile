@@ -30,4 +30,4 @@ RUN mkdir d2l-zh && cd d2l-zh && \
 
 ENV PATH=/d2l/miniconda3/bin:$PATH
 
-CMD conda run --no-capture-output -n d2l jupyter lab --notebook-dir=/d2l/d2l-zh/pytorch --allow-root
+CMD conda run --no-capture-output -n d2l jupyter lab --notebook-dir=/d2l/d2l-zh/pytorch --allow-root --ip=0.0.0.0
